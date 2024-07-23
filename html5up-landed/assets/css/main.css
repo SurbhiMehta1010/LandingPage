@@ -2517,17 +2517,18 @@ input, select, textarea {
 		overflow: hidden;
 	}
 
-		.image:before {
-			content: '';
-			display: block;
-			position: absolute;
-			left: 0;
-			top: 0;
-			background-image: url("images/overlay.png");
-			width: 100%;
-			height: 100%;
-			z-index: 1;
-		}
+	.image:before {
+		content: '';
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		background-image: none; /* Temporarily disable overlay */
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+	}
+	
 
 		.image img {
 			border-radius: 4px;
@@ -4109,3 +4110,206 @@ input, select, textarea {
 					}
 
 	}
+	/* Style for timeline section */
+#two .timeline {
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+.timeline-item {
+    position: relative;
+    padding: 10px 0;
+    border-left: 2px solid #000; /* Vertical line */
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    width: 12px;
+    height: 12px;
+    background: #000; /* Circle for timeline point */
+    border-radius: 50%;
+    top: 10px;
+}
+
+h3, h4 {
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+h4 {
+    font-size: 1em;
+    color: #555; /* Light grey color for company names */
+}
+
+.header p {
+    font-size: 1em;
+    color: #777; /* Slightly lighter color for description */
+    margin-top: 10px;
+}
+/* Style for skills section */
+#three .skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skills-list li {
+    margin-bottom: 10px;
+}
+
+.skills-list li strong {
+    display: inline-block;
+    width: 120px; /* Adjust as needed to fit your design */
+}
+
+.skills-list li {
+    font-size: 0.9em; /* Slightly smaller text for compactness */
+    line-height: 1.5;
+}
+/* Style for project sections */
+.projects-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project-item {
+    position: relative;
+    width: 300px; /* Adjust as needed */
+    height: 200px; /* Adjust as needed */
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.project-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    padding: 20px;
+}
+
+.project-item:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-item:hover img {
+    transform: scale(1.1);
+}
+
+.project-item:hover {
+    transform: scale(1.05);
+}
+
+.project-item h3 {
+    margin: 0 0 10px 0;
+}
+
+.project-item p {
+    margin: 0 0 15px 0;
+}
+
+.project-item .button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.project-item .button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Banner section styling */
+#banner {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
+    padding: 60px 20px;
+}
+
+.banner-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1; /* Ensure GIF is in the background */
+}
+
+.banner-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the GIF covers the entire background area */
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2; /* Ensure content is above the GIF */
+}
+
+.banner-photo img {
+    max-width: 150px; /* Adjust size as needed */
+    border-radius: 50%; /* Round photo */
+    display: block;
+    margin: 0 auto;
+}
+
+.banner-text header {
+    margin-top: 20px;
+}
+
+.banner-gif {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background to make the GIF blend nicely */
+    z-index: 1; /* Place GIF behind text */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .banner-photo img {
+        max-width: 100px; /* Adjust size for smaller screens */
+    }
+}
