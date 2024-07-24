@@ -4120,7 +4120,7 @@ input, select, textarea {
 .timeline-item {
     position: relative;
     padding: 10px 0;
-    border-left: 2px solid #000; /* Vertical line */
+    border-left: 2px solid #ffffff; /* Vertical line */
     margin-left: 20px;
     margin-bottom: 20px;
 }
@@ -4131,7 +4131,7 @@ input, select, textarea {
     left: -6px;
     width: 12px;
     height: 12px;
-    background: #000; /* Circle for timeline point */
+    background: #ffffff; /* Circle for timeline point */
     border-radius: 50%;
     top: 10px;
 }
