@@ -2,20 +2,32 @@
 <html>
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-X5X4G3STMJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X5X4G3STMJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'G-X5X4G3STMJ');
-</script>
+      gtag('config', 'G-X5X4G3STMJ');
+    </script>
     <title>Surbhi Mehta's Portfolio</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="stylesheet" href="assets/css/main.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/controls/OrbitControls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/loaders/GLTFLoader.js"></script>
     <script src="assets/js/background.js" defer></script>
+    <style>
+        #container3D {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1; /* Ensure it's behind other content */
+        }
+    </style>
 </head>
 <body class="is-preload landing">
     <div id="page-wrapper">
@@ -37,9 +49,6 @@
 
         <!-- One -->
         <section id="one" class="spotlight style3 left">
-            <!-- Image commented out
-            <span class="image fit main bottom"><img src="images/Back.jpeg" alt="Surbhi Mehta"></span>
-            -->
             <div class="content">
                 <header>
                     <h2>About Me</h2>
@@ -52,9 +61,6 @@
 
         <!-- Two -->
         <section id="two" class="spotlight style2 right">
-            <!-- Image commented out
-            <span class="image fit main"><img src="images/pic03.jpg" alt="Work Experience"></span>
-            -->
             <div class="content">
                 <header>
                     <h2>Work Experience</h2>
@@ -84,9 +90,6 @@
 
         <!-- Three -->
         <section id="three" class="spotlight style3 left">
-            <!-- Image commented out
-            <span class="image fit main bottom"><img src="images/pic04.jpg" alt="Skills & Technologies"></span>
-            -->
             <div class="content">
                 <header>
                     <h2>Skills & Technologies</h2>
@@ -166,7 +169,7 @@
                             <input type="email" name="email" id="email" placeholder="Email" required>
                         </div>
                         <div class="col-12">
-                            <textarea name="message" id="message" placeholder="Message" rows="6" required></textarea>
+                            <textarea name="message" id="message" placeholder="Message" rows="4" required></textarea>
                         </div>
                         <div class="col-12">
                             <ul class="actions">
@@ -180,18 +183,46 @@
 
         <!-- Footer -->
         <footer id="footer">
-            <ul class="icons">
-                <li><a href="https://www.linkedin.com/in/surbhi-mehta/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-                <li><a href="https://github.com/SurbhiMehta" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-                <li><a href="mailto:surbhi@example.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-            </ul>
-            <ul class="copyright">
-                <li>&copy; Surbhi Mehta. All rights reserved.</li>
-            </ul>
+            <div class="container">
+                <p>&copy; Surbhi Mehta. All rights reserved.</p>
+            </div>
         </footer>
     </div>
 
-    <!-- Background Canvas -->
-    <div id="threejs-canvas"></div>
+    <!-- 3D Model Script -->
+    <script>
+        // Initialize the 3D scene
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.getElementById('container3D').appendChild(renderer.domElement);
+
+        // Load the 3D model
+        const loader = new THREE.GLTFLoader();
+        loader.load('path/to/your/3Dmodel.glb', function (gltf) {
+            scene.add(gltf.scene);
+            gltf.scene.position.set(0, 0, 0); // Adjust position if needed
+            render();
+        });
+
+        // Render function
+        function render() {
+            requestAnimationFrame(render);
+            controls.update();
+            renderer.render(scene, camera);
+        }
+
+        camera.position.z = 5;
+
+        // Adjust the size of the renderer on window resize
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
 </body>
 </html>
