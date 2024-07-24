@@ -6,39 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="stylesheet" href="assets/css/main.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css"></noscript>
-    <style>
-        /* Style for Three.js canvas */
-        #threejs-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            width: 100%;
-            height: 100%;
-        }
-    </style>
+    <script src="assets/js/background.js" defer></script>
 </head>
 <body class="is-preload landing">
     <div id="page-wrapper">
-
-        <!-- Header 
-        <header id="header">
-            <h1 id="logo"><a href="index.html">Surbhi Mehta</a></h1>
-            <nav id="nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="resume.html">Resume</a></li>
-                </ul>
-            </nav>
-        </header>
-        -->
-
-        <!-- Three.js Canvas -->
-        <div id="threejs-canvas"></div>
-
         <!-- Banner -->
         <section id="banner">
             <div class="banner-content">
@@ -57,7 +28,9 @@
 
         <!-- One -->
         <section id="one" class="spotlight style3 left">
-            <!-- <span class="image fit main bottom"><img src="images/Back.jpeg" alt="Surbhi Mehta"></span> -->
+            <!-- Image commented out
+            <span class="image fit main bottom"><img src="images/Back.jpeg" alt="Surbhi Mehta"></span>
+            -->
             <div class="content">
                 <header>
                     <h2>About Me</h2>
@@ -70,7 +43,9 @@
 
         <!-- Two -->
         <section id="two" class="spotlight style2 right">
-            <!-- <span class="image fit main"><img src="images/pic03.jpg" alt="Work Experience"></span> -->
+            <!-- Image commented out
+            <span class="image fit main"><img src="images/pic03.jpg" alt="Work Experience"></span>
+            -->
             <div class="content">
                 <header>
                     <h2>Work Experience</h2>
@@ -100,7 +75,9 @@
 
         <!-- Three -->
         <section id="three" class="spotlight style3 left">
-            <!-- <span class="image fit main bottom"><img src="images/pic04.jpg" alt="Skills & Technologies"></span> -->
+            <!-- Image commented out
+            <span class="image fit main bottom"><img src="images/pic04.jpg" alt="Skills & Technologies"></span>
+            -->
             <div class="content">
                 <header>
                     <h2>Skills & Technologies</h2>
@@ -116,46 +93,6 @@
                     <li><strong>Data Science:</strong> Pandas, NumPy, TensorFlow</li>
                     <li><strong>Dev:</strong> Agile, TDD, CI/CD</li>
                 </ul>
-            </div>
-            <a href="#projects" class="goto-next scrolly">Next</a>
-        </section>
-
-        <!-- Projects -->
-        <section id="projects" class="spotlight style2 right">
-            <!-- <span class="image fit main"><img src="images/pic05.jpg" alt="Projects"></span> -->
-            <div class="content">
-                <header>
-                    <h2>Projects</h2>
-                    <p>Showcasing some of my key projects.</p>
-                </header>
-                <div class="projects-container">
-                    <!--
-                    <div class="project-item">
-                        <img src="images/project1.jpg" alt="Project 1">
-                        <div class="project-overlay">
-                            <h3>Project Title 1</h3>
-                            <p>Brief description of the project.</p>
-                            <a href="#" class="button">View Project</a>
-                        </div>
-                    </div>
-                    <div class="project-item">
-                        <img src="images/project2.jpg" alt="Project 2">
-                        <div class="project-overlay">
-                            <h3>Project Title 2</h3>
-                            <p>Brief description of the project.</p>
-                            <a href="#" class="button">View Project</a>
-                        </div>
-                    </div>
-                    <div class="project-item">
-                        <img src="images/project3.jpg" alt="Project 3">
-                        <div class="project-overlay">
-                            <h3>Project Title 3</h3>
-                            <p>Brief description of the project.</p>
-                            <a href="#" class="button">View Project</a>
-                        </div>
-                    </div>
-                    -->
-                </div>
             </div>
             <a href="#four" class="goto-next scrolly">Next</a>
         </section>
@@ -184,75 +121,68 @@
                             <h3>Sarah MacCallum</h3>
                             <p>"Surbhi is an excellent team member. She is extremely hardworking, and it is a pleasure to have her as one of my fellow co-workers. She is mature and greatly respected by all peers, and she is always willing to lend a helping hand! I love working with Surbhi."</p>
                         </section>
+                        <section class="col-4 col-6-medium col-12-xsmall">
+                            <span class="icon solid alt major fa-quote-left"></span>
+                            <h3>Franz Wagner Dal Belo</h3>
+                            <p>"Surbhi is very smart and determined. She helped us to create a good tool."</p>
+                        </section>
+                        <section class="col-4 col-6-medium col-12-xsmall">
+                            <span class="icon solid alt major fa-quote-left"></span>
+                            <h3>Terry Boyland</h3>
+                            <p>"We had the pleasure of Surbhi joining us for a co-op during which time she learnt a new programming language, applied new agile methods and created a CRM system from scratch with her team. It was a real delight to have her with us."</p>
+                        </section>
+                        <section class="col-4 col-6-medium col-12-xsmall">
+                            <span class="icon solid alt major fa-quote-left"></span>
+                            <h3>JobenPreet Singh</h3>
+                            <p>"Surbhi is always available to help and to assist others in their projects. She is a good team player and a friendly person. She has good communication and marketing skills that can be valuable in establishing a bridge between the client and the development team."</p>
+                        </section>
                     </div>
                 </div>
-                <footer class="major">
-                    <ul class="actions special">
-                        <li><a href="contact.html" class="button">Contact Me</a></li>
-                    </ul>
-                </footer>
             </div>
         </section>
 
-        <!-- Footer 
+        <!-- Five -->
+        <section id="five" class="wrapper style1 special fade-up">
+            <div class="container">
+                <header class="major">
+                    <h2>Contact Me</h2>
+                    <p>Feel free to get in touch with me through any of the channels below.</p>
+                </header>
+                <form method="post" action="#">
+                    <div class="row gtr-uniform">
+                        <div class="col-6 col-12-mobilep">
+                            <input type="text" name="name" id="name" placeholder="Name" required>
+                        </div>
+                        <div class="col-6 col-12-mobilep">
+                            <input type="email" name="email" id="email" placeholder="Email" required>
+                        </div>
+                        <div class="col-12">
+                            <textarea name="message" id="message" placeholder="Message" rows="6" required></textarea>
+                        </div>
+                        <div class="col-12">
+                            <ul class="actions">
+                                <li><input type="submit" value="Send Message" class="special"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer -->
         <footer id="footer">
             <ul class="icons">
-                <li><a href="https://twitter.com/SurbhiMehta" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-                <li><a href="https://facebook.com/SurbhiMehta" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-                <li><a href="https://instagram.com/SurbhiMehta" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-                <li><a href="https://linkedin.com/in/SurbhiMehta" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+                <li><a href="https://www.linkedin.com/in/surbhi-mehta/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+                <li><a href="https://github.com/SurbhiMehta" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                <li><a href="mailto:surbhi@example.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+            </ul>
+            <ul class="copyright">
+                <li>&copy; Surbhi Mehta. All rights reserved.</li>
             </ul>
         </footer>
-        -->
-
     </div>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/jquery.dropotron.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-
-    <!-- Three.js Script -->
-    <script>
-        let scene, camera, renderer, cube;
-
-        function init() {
-            scene = new THREE.Scene();
-            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-            renderer = new THREE.WebGLRenderer();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            document.getElementById('threejs-canvas').appendChild(renderer.domElement);
-
-            const geometry = new THREE.BoxGeometry();
-            const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-            cube = new THREE.Mesh(geometry, material);
-            scene.add(cube);
-
-            camera.position.z = 5;
-
-            animate();
-        }
-
-        function animate() {
-            requestAnimationFrame(animate);
-            cube.rotation.x += 0.01;
-            cube.rotation.y += 0.01;
-            renderer.render(scene, camera);
-        }
-
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
-
-        init();
-    </script>
-
+    <!-- Background Canvas -->
+    <div id="threejs-canvas"></div>
 </body>
 </html>

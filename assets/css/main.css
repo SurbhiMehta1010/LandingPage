@@ -4313,3 +4313,88 @@ h4 {
         max-width: 100px; /* Adjust size for smaller screens */
     }
 }
+
+
+/* Style for the body */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+/* Banner content */
+.banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+/* Banner photo styling */
+.banner-photo img {
+    border-radius: 50%;
+    max-width: 150px;
+    border: 5px solid white;
+}
+
+/* Banner text styling */
+.banner-text {
+    margin-left: 20px;
+    color: white;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Styling for other sections */
+.spotlight .content {
+    color: #fff;
+}
+
+.timeline {
+    list-style: none;
+    padding: 0;
+}
+
+.timeline-item {
+    margin-bottom: 20px;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+}
+
+.skills-list li {
+    margin-bottom: 10px;
+}
+
+/* Footer styling */
+#footer {
+    background: #111;
+    color: #aaa;
+    text-align: center;
+    padding: 20px 0;
+}
+
+#footer .icons {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1em 0;
+}
+
+#footer .icons li {
+    display: inline-block;
+    margin: 0 0.5em;
+}
+
+#footer .icons a {
+    color: #aaa;
+    text-decoration: none;
+}
+
+#footer .copyright {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
