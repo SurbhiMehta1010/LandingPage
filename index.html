@@ -7,14 +7,16 @@
   <title>Surbhi Mehta</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script type="text/javascript">
-  (function(){
-    emailjs.init("your_user_id");
-  })();
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
 </script>
-
-  
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "2LQq0lcVOAaHnIjfe",
+      });
+   })();
+</script> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
@@ -442,15 +444,14 @@
   </script>
   <script type="text/javascript">
     (function(){
-      emailjs.init("surbhi mehta"); // Replace with your actual EmailJS user ID
+      emailjs.init("2LQq0lcVOAaHnIjfe"); // Replace with your actual EmailJS user ID
     })();
   </script>
   
   <script type="text/javascript">
     document.getElementById('contact-form').addEventListener('submit', function(event) {
       event.preventDefault();
-      emailjs.sendForm('service_i0od38s', '
-__ejs-test-mail-service__', this)
+      emailjs.sendForm('service_i0od38s', '__ejs-test-mail-service__', this)
         .then(function() {
           alert('Message sent successfully!');
         }, function(error) {
@@ -458,6 +459,7 @@ __ejs-test-mail-service__', this)
         });
     });
   </script>
+  
   
   
 
