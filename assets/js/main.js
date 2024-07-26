@@ -244,3 +244,13 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+document.addEventListener('DOMContentLoaded', function () {
+  const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+  const navmenu = document.querySelector('.navmenu');
+
+  mobileNavToggle.addEventListener('click', function () {
+    navmenu.classList.toggle('active');
+  });
+});
+
