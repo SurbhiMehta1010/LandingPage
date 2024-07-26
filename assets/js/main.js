@@ -43,7 +43,6 @@
         mobileNavToogle();
       }
     });
-
   });
 
   /**
@@ -182,6 +181,44 @@
         }, 100);
       }
     }
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const swiperConfig = {
+      loop: true,
+      speed: 600,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      slidesPerView: 3, // Show three recommendations per slide
+      spaceBetween: 30, // Space between slides
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true,
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        480: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        992: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+      },
+    };
+
+    new Swiper('#testimonials .swiper-container', swiperConfig);
   });
 
   /**
