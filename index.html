@@ -70,11 +70,11 @@
       <nav id="navmenu" class="navmenu">
         <ul class="d-flex justify-content-center">
           <li><a href="#about">ABOUT</a></li>
-          <li><a href="#projects">PROJECTS</a></li>
-          <li><a href="#experience">EXPERIENCE</a></li>
-          <li><a href="#technical-toolkit">TOOLKIT</a></li>
-          <li><a href="#testimonials">RECOMMENDATIONS</a></li>
-          <li><a href="#connect">CONNECT</a></li>
+          <li ><a href="#projects">PROJECTS</a></li>
+          <li ><a href="#experience">EXPERIENCE</a></li>
+          <li ><a href="#technical-toolkit">TOOLKIT</a></li>
+          <li ><a href="#testimonials">RECOMMENDATIONS</a></li>
+          <li ><a href="#connect">CONNECT</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -99,7 +99,7 @@
   <div class="container" data-aos="fade-up" data-aos-delay="100">
     <div class="row gy-4">
       <div class="section-title">
-        <h2>ABOUT ME</h2>
+        <h2 class="white-heading">ABOUT ME</h2>
       </div>
       <div class="col-12 content">
         <p>
@@ -118,7 +118,7 @@
     <!-- Projects Section -->
     <section id="projects" class="services section" style="background-image: url('assets/The Wellhall-2/3.jpg'); background-size: cover; background-position: center;">
       <div class="container section-title" data-aos="fade-up">
-        <h2>PROJECTS</h2>
+        <h2 class="white-heading">PROJECTS</h2>
       </div>
       <div class="container">
         <div class="row gy-4">
@@ -208,7 +208,7 @@
     <!-- Work Experience Section -->
     <section id="experience" class="features section" style="background-image: url('assets/The Wellhall-2/4.jpg'); background-size: cover; background-position: center;">
       <div class="container section-title" data-aos="fade-up">
-        <h2>WORK EXPERIENCE</h2>
+        <h2 class="white-heading">WORK EXPERIENCE</h2>
       </div>
       <div class="container">
         <div class="row gy-4">
@@ -315,7 +315,7 @@
   <img src="assets/The Wellhall-2/6.jpg" class="testimonials-bg" alt="Surbhi Mehta">
   <div class="container" data-aos="fade-up" data-aos-delay="100">
     <div class="section-title">
-      <h2>RECOMMENDATIONS</h2>
+      <h2 class="white-heading">RECOMMENDATIONS</h2>
     </div>
     <div class="swiper-container">
       <div class="swiper-wrapper">
@@ -379,21 +379,14 @@
   <img src="assets/The Wellhall-2/4.jpg" alt="Surbhi Mehta">
   <div class="content container text-center text-white" data-aos="fade-up" data-aos-delay="100">
     <div class="section-title">
-      <h2>CONNECT WITH ME</h2>
+      <h2 class="white-heading">CONNECT WITH ME</h2>
     </div>
-    <form id="contact-form">
-      <div class="row">
-        <div class="col-md-6 mb-3">
-          <input type="text" name="name" class="form-control" placeholder="Name" required>
-        </div>
-        <div class="col-md-6 mb-3">
-          <input type="email" name="email" class="form-control" placeholder="Email" required>
-        </div>
-      </div>
-      <div class="form-group mb-3">
-        <textarea name="message" class="form-control" rows="4" placeholder="Message" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Send Message</button>
+    <form action="submit_form.php" method="post">
+      <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+      <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+      <textarea name="message" rows="4" class="form-control" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+      <a href="assets/resume.pdf" class="resume-button" download>Download Resume</a>
     </form>
     
     <div class="footer">
@@ -404,12 +397,17 @@
         <a href="https://instagram.com/_justsurbhi_"><i class="bi bi-instagram"></i></a>
         <a href="https://github.com/SurbhiMehta1010"><i class="bi bi-github"></i></a>
         <a href="mailto:justsurbhi10@gmail.com"><i class="bi bi-envelope"></i></a>
+        <a href="https://youtu.be/q4H-MZ46-X0?si=ZLkj1K9WTj42YgUL" target="_blank"><i class="bi bi-youtube"></i></a> <!-- YouTube Icon -->
       </div>
       <ul class="copyright list-inline mb-0">
         <li class="list-inline-item">&copy; Surbhi Mehta. All rights reserved.</li></ul>
 
     <!-- Footer -->
-    
+    <br>
+    <br>
+    <br>
+    <br>
+
 
     <!-- Scroll Top -->
     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -447,6 +445,13 @@
       emailjs.init("2LQq0lcVOAaHnIjfe"); // Replace with your actual EmailJS user ID
     })();
   </script>
+  <script>
+    // Play sound on arrow click
+    document.getElementById('scroll-top').addEventListener('click', function() {
+      var audio = new Audio('assets/Surbhi.mp3');
+      audio.play();
+    });
+  </script>
   
   <script type="text/javascript">
     document.getElementById('contact-form').addEventListener('submit', function(event) {
@@ -457,6 +462,20 @@
         }, function(error) {
           alert('Failed to send message: ' + JSON.stringify(error));
         });
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      window.addEventListener('scroll', function() {
+        const header = document.querySelector('.header');
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+          header.classList.remove('transparent');
+        } else {
+          header.classList.add('transparent');
+          header.classList.remove('scrolled');
+        }
+      });
     });
   </script>
   

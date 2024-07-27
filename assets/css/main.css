@@ -21,12 +21,21 @@ body {
 
 /* Header styles */
 .header {
-  background-color: rgba(0, 0, 0, 0.8); /* Transparent background */
   color: var(--quinary-color);
   padding: 10px 0;
   transition: all 0.5s;
   z-index: 997;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  
 }
+.header.scrolled {
+  background: #000; /* Add background when scrolled */
+}
+
+
+
 
 .header .logo {
   line-height: 1;
@@ -65,7 +74,57 @@ body {
   color: var(--primary-color);
   background: var(--tertiary-color);
 }
-/* Hero Section */
+
+/* Nav Menu */
+.navmenu ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navmenu li {
+  position: relative;
+}
+
+.navmenu a,
+.navmenu a:focus {
+  color: var(--quinary-color);
+  padding: 18px 15px;
+  font-size: 16px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+.navmenu a:hover,
+.navmenu .active,
+.navmenu .active:focus {
+  color: var(--tertiary-color);
+}
+
+.mobile-nav-toggle {
+  color: var(--quinary-color);
+  font-size: 28px;
+  line-height: 0;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+/* Hide navigation menu on mobile */
+@media (max-width: 768px) {
+  .header .navmenu,
+  .mobile-nav-toggle {
+    display: none;
+  }
+}
+
+/* New Hero Section CSS */
 #hero {
   width: 100%;
   height: 100vh; /* Ensure the hero section takes full viewport height */
@@ -136,94 +195,20 @@ body {
   }
 }
 
-/* Remove underline from navmenu links */
-#navmenu ul li a {
-  text-decoration: none; /* Remove underline */
-  color: inherit; /* Inherit text color from parent */
-  font-weight: bold; /* Optional: Make text bold */
-  padding: 10px 15px; /* Optional: Add padding for better spacing */
-}
-
-#navmenu ul li a:hover {
-  color: var(--secondary-color); /* Change text color on hover to dark pink or desired color */
-}
-
-/* Mobile nav toggle button */
-.mobile-nav-toggle {
-  font-size: 24px;
-  cursor: pointer;
-  color: var(--primary-color); /* Adjust color as needed */
-}
-
-/* Optional: Style for active links */
-#navmenu ul li a.active {
-  color: var(--secondary-color); /* Dark pink or desired color for active links */
-}
-
-
-/* Navigation Bar */
-.header .navmenu a,
-.header .navmenu a:focus {
-  color: #fff; /* Set navigation bar text to white */
-  padding: 18px 15px;
-  font-size: 16px;
-  font-family: 'Della Respira', serif;
-  font-weight: 400;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  white-space: nowrap;
-  transition: 0.3s;
-}
-
-.header .navmenu li:hover > a,
-.header .navmenu .active,
-.header .navmenu .active:focus {
-  color: #F3BEBF; /* Set hover effect color */
-}
-
-
-/* Keyframes for fade-in animation */
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-@media (max-width: 1200px) {
-  .header .logo {
-    order: 1;
+/* Responsive adjustments for Hero Section */
+@media (max-width: 768px) {
+  #hero {
+    height: auto;
+    padding: 100px 20px; /* Add padding for smaller devices */
   }
 
-  .header .btn-getstarted {
-    order: 2;
-    margin: 0 15px 0 0;
-    padding: 6px 15px;
+  #hero h1 {
+    font-size: 2.5rem; /* Smaller font size for mobile devices */
   }
 
-  .header .navmenu {
-    order: 3;
+  #hero p {
+    font-size: 1.2rem; /* Smaller font size for mobile devices */
   }
-}
-
-.scrolled .header {
-  box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
-}
-
-/* Index Page Header */
-.index-page .header {
-  background-color: rgba(0, 0, 0, 0);
-}
-
-/* Index Page Header on Scroll */
-.index-page.scrolled .header {
-  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Nav Menu */
@@ -267,22 +252,21 @@ body {
   transition: color 0.3s;
 }
 
-.navmenu ul ul {
-  background: var(--background-color);
-  padding: 10px 0;
-  margin: 0;
-  list-style: none;
-}
+/* Responsive adjustments for Nav Menu */
+@media (max-width: 768px) {
+  .navmenu ul {
+    flex-direction: column;
+    align-items: center;
+  }
 
-.navmenu ul ul a {
-  padding: 10px 20px;
-  font-size: 15px;
-  color: var(--primary-color);
-}
+  .navmenu li {
+    margin-bottom: 10px;
+  }
 
-.navmenu ul ul a:hover {
-  background-color: var(--secondary-color);
-  color: var(--background-color);
+  .navmenu a {
+    padding: 10px 20px;
+    font-size: 18px;
+  }
 }
 /* About Section */
 #about {
@@ -298,7 +282,7 @@ body {
 }
 
 #about .section-title h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
   color: #ffffff; /* White color for headings */
   margin-bottom: 20px;
@@ -332,7 +316,6 @@ body {
   filter: none; /* Ensure there is no blur filter applied */
   animation: scrapbookAnimation 1s ease-in-out;
 }
-
 
 #about .content p {
   font-size: 1rem;
@@ -387,22 +370,36 @@ body {
 }
 
 /* Responsive adjustments */
-@media (min-width: 992px) {
-  #about .row {
-    display: flex;
-    align-items: center;
+@media (max-width: 992px) {
+  #about .section-title h2 {
+    font-size: 2rem; /* Slightly smaller font size for tablets */
   }
 
-  #about .col-lg-6 {
-    padding: 0 15px;
+  #about .content {
+    padding: 1.5rem; /* Slightly reduce padding for tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  #about {
+    padding: 30px 0; /* Reduce padding for mobile devices */
   }
 
-  #about .col-lg-6.order-1 {
-    order: 1;
+  #about .section-title h2 {
+    font-size: 1.75rem; /* Smaller font size for mobile devices */
   }
 
-  #about .col-lg-6.order-2 {
-    order: 2;
+  #about .content {
+    padding: 1rem; /* Reduce padding for mobile devices */
+  }
+
+  #about .content p {
+    font-size: 0.9rem; /* Smaller font size for mobile devices */
+  }
+
+  #about img {
+    width: 100%; /* Make image full width for mobile devices */
+    max-width: 100%; /* Ensure the image does not exceed the container */
   }
 }
 /* Projects Section */
@@ -419,7 +416,7 @@ body {
 }
 
 #projects .section-title h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
   color: #ffffff; /* White color for headings */
   margin-bottom: 20px;
@@ -505,17 +502,17 @@ body {
   }
 }
 
-/* Responsive adjustments */
-@media (min-width: 768px) {
+/* Mobile adjustments */
+@media (max-width: 768px) {
   #projects .row {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   #projects .col-lg-4, #projects .col-md-6 {
-    flex: 1 1 calc(33.333% - 30px); /* Adjust the width of the columns */
-    margin: 15px;
+    flex: 1 1 100%; /* Full width on mobile devices */
+    margin: 15px 0; /* Vertical margin between items */
   }
 }
 /* Experience Section */
@@ -532,7 +529,7 @@ body {
 }
 
 #experience .section-title h2 {
-  font-size: 2.5rem;
+  font-size: 2rem; /* Consistent font size */
   font-weight: bold;
   color: #ffffff; /* White color for main heading */
   margin-bottom: 20px;
@@ -540,22 +537,23 @@ body {
 }
 
 #experience .section-title p {
-  font-size: 1.2rem;
+  font-size: var(--font-size-medium); /* Consistent font size */
   color: var(--secondary-color);
 }
 
 #experience .features-item {
   background-color: #ffffff; /* White background for features items */
-  padding: 10px;
+  padding: 20px; /* Increased padding for better spacing */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s;
-  margin-bottom: 10px;
+  margin-bottom: 20px; /* Increased margin for better spacing */
   color: #C33159; /* Dark pink color for text inside the boxes */
   text-align: left; /* Uniform alignment for text */
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex: 1; /* Ensures all boxes take equal height */
 }
 
 #experience .features-item:hover {
@@ -564,21 +562,21 @@ body {
 }
 
 #experience .features-item h4 {
-  font-size: 1.5rem;
+  font-size: var(--font-size-medium); /* Consistent font size */
   font-weight: bold;
   color: #C33159; /* Dark pink color for headings */
   margin-bottom: 10px;
 }
 
 #experience .features-item h5 {
-  font-size: 1.2rem;
+  font-size: var(--font-size-small); /* Consistent font size */
   font-weight: normal;
   color: #C33159; /* Dark pink color for subheadings */
   margin-bottom: 10px;
 }
 
 #experience .features-item p {
-  font-size: 1rem;
+  font-size: var(--font-size-small); /* Consistent font size */
   line-height: 1.6;
   color: #C33159; /* Dark pink color for paragraph text */
 }
@@ -627,7 +625,24 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  #experience .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
+  #experience .col-lg-6, #experience .features-image {
+    flex: 1 1 100%; /* Full width on mobile devices */
+    padding: 0 15px;
+  }
+
+  #experience .features-item {
+    margin-bottom: 20px; /* Add margin between items */
+  }
+}
+
+/* Technical Toolkit Section */
 #technical-toolkit {
   background-color: var(--background-color);
   color: var(--primary-color);
@@ -641,14 +656,15 @@ body {
 }
 
 #technical-toolkit .section-title h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
+  /* Consistent font size */
   font-weight: bold;
   color: white; /* Change heading color to white */
   margin-bottom: 20px;
 }
 
 #technical-toolkit .section-title p {
-  font-size: 1.2rem;
+  font-size: var(--font-size-medium); /* Consistent font size */
   color: var(--secondary-color);
 }
 
@@ -665,7 +681,7 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   text-align: center;
-  flex: 1 1 calc(30% - 40px);
+  flex: 1 1 calc(30% - 40px); /* Adjust box size for larger screens */
   max-width: calc(30% - 40px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -683,21 +699,44 @@ body {
 
 .toolkit-box h3 {
   margin: 10px 0;
-  font-size: 1.5rem;
+  font-size: var(--font-size-medium); /* Consistent font size */
   color: var(--primary-color);
 }
 
 .toolkit-box p {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: var(--font-size-small); /* Consistent font size */
   color: var(--secondary-color);
 }
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .toolkit-box {
+    flex: 1 1 calc(45% - 40px); /* Adjust box size for tablets */
+    max-width: calc(45% - 40px);
+  }
+}
+
+@media (max-width: 768px) {
+  .toolkit-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .toolkit-box {
+    flex: 1 1 100%; /* Full width on mobile devices */
+    max-width: 100%;
+    margin-bottom: 20px; /* Add margin between boxes */
+  }
+}
+/* Testimonials Section */
 #testimonials {
   background-color: rgba(255, 228, 225, 0.5); /* Light pink background with more transparency */
   color: #C33159; /* Dark pink text color */
   padding: 60px 0;
   font-family: var(--default-font);
   position: relative;
+  overflow: hidden; /* Ensure no horizontal scrolling */
 }
 
 #testimonials:before {
@@ -729,7 +768,7 @@ body {
 }
 
 #testimonials .section-title h2 {
-  font-size: 2.5rem;
+  font-size: 2rem; /* Consistent font size */
   font-weight: bold;
   color: #fff; /* White color for heading */
   margin-bottom: 20px;
@@ -737,12 +776,14 @@ body {
 }
 
 #testimonials .section-title p {
-  font-size: 1.2rem;
+  font-size: var(--font-size-medium); /* Consistent font size */
   color: #C33159; /* Dark pink text color for subtitle */
 }
 
 #testimonials .swiper-container {
+  width: 100%;
   padding: 20px 0;
+  overflow: hidden; /* Ensure no horizontal scrolling */
 }
 
 #testimonials .swiper-slide {
@@ -758,32 +799,32 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 0 10px; /* Added margin for spacing between boxes */
-  width: 320px; /* Adjusted width */
-  height: 320px; /* Adjusted height */
+  width: 360px; /* Increased width for uniformity */
+  height: 400px; /* Increased height for uniformity */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* Align items to start */
   align-items: center;
   overflow: hidden; /* Ensure text fits inside the box */
   text-overflow: ellipsis; /* Handle overflowing text with ellipsis */
 }
 
 #testimonials .testimonial-item .testimonial-img {
-  width: 80px; /* Fixed size */
+  width: 100px; /* Increased size */
   border-radius: 50%;
   margin: 0 auto 10px auto;
   border: 4px solid #C33159; /* Dark pink border for testimonial image */
 }
 
 #testimonials .testimonial-item h3 {
-  font-size: 1.3rem;
+  font-size: var(--font-size-medium); /* Consistent font size */
   font-weight: bold;
   color: #C33159; /* Dark pink color for names */
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
 
 #testimonials .testimonial-item p {
-  font-size: 0.9rem;
+  font-size: var(--font-size-small); /* Consistent font size */
   line-height: 1.4;
   color: #C33159; /* Dark pink color for text */
   font-style: italic;
@@ -796,7 +837,14 @@ body {
   background: #C33159; /* Dark pink color for pagination bullets */
 }
 
-
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #testimonials .testimonial-item {
+    width: 100%; /* Full width on mobile devices */
+    max-width: 100%;
+    padding: 15px; /* Adjusted padding for better fit on mobile */
+  }
+}
 /* Call To Action Section */
 #connect {
   background-color: var(--background-color); /* Use background color from palette */
@@ -836,7 +884,7 @@ body {
 }
 
 #connect .section-title h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
   color: #fff; /* White color for heading */
   margin-bottom: 20px;
@@ -871,7 +919,8 @@ body {
   box-shadow: none;
 }
 
-#connect form button {
+#connect form button,
+#connect form .resume-button {
   background-color: var(--secondary-color); /* Dark pink background */
   border: none;
   padding: 10px 30px;
@@ -882,9 +931,11 @@ body {
   transition: all 0.3s ease;
   margin: 10px; /* Added margin for spacing */
   display: inline-block; /* Ensure buttons are inline */
+  text-decoration: none; /* Remove underline */
 }
 
-#connect form button:hover {
+#connect form button:hover,
+#connect form .resume-button:hover {
   background-color: #b5294a; /* Slightly darker pink on hover */
   color: #fff;
 }
@@ -924,6 +975,22 @@ body {
   color: #fff;
 }
 
+/* Arrow at bottom */
+#connect .scroll-top {
+  position: absolute;
+  bottom: 50px; /* Move arrow down slightly */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: #fff; /* Initial color set to dark pink */
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+#connect .scroll-top:hover {
+  color: #; /* Change to white on hover */
+}
+
 /* Mobile (up to 480px) */
 @media (max-width: 480px) {
   .header {
@@ -953,7 +1020,8 @@ body {
     font-size: 1rem;
   }
 
-  #connect form button {
+  #connect form button,
+  #connect form .resume-button {
     width: 100%;
     margin-bottom: 10px;
   }
@@ -993,7 +1061,8 @@ body {
     font-size: 1.2rem;
   }
 
-  #connect form button {
+  #connect form button,
+  #connect form .resume-button {
     width: auto;
     margin: 5px;
   }
@@ -1033,7 +1102,8 @@ body {
     font-size: 1.2rem;
   }
 
-  #connect form button {
+  #connect form button,
+  #connect form .resume-button {
     width: auto;
     margin: 10px;
   }
