@@ -6,4 +6,4 @@ Author: BootstrapMade.com
 License: https://bootstrapmade.com/license/
 
 
-Credits for Lana Del Rey song easter eg at the bottom arrow button : https://youtu.be/oKxuiw3iMBE?si=mde1DUFmntXn3vcw 
+Credits for Lana Del Rey song easter egg at the bottom arrow button : https://youtu.be/oKxuiw3iMBE?si=mde1DUFmntXn3vcw 
